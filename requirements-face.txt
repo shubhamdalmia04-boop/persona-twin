@@ -1,0 +1,2 @@
+mediapipe>=0.10,<1.0            # face landmarks for the animated face (tested with 0.10.x)
+opencv-contrib-python>=4.8,<5   # image warping (tested with 4.x; OpenCV 5 is untested)

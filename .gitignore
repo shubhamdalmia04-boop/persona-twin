@@ -1,0 +1,23 @@
+# Local, machine-specific — never commit these
+.venv/
+runtime/
+data/
+models/
+app/
+build/
+dist/
+app_payload/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.egg-info/
+.pytest_cache/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# PyInstaller
+*.spec

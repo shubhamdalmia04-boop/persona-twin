@@ -1,0 +1,2 @@
+coqui-tts>=0.26     # maintained fork of Coqui TTS; provides XTTS-v2 voice cloning (Python 3.10-3.12)
+torchaudio          # imported by XTTS; must match the installed torch (pinned by install.py)

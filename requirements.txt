@@ -1,0 +1,11 @@
+numpy>=1.26
+requests>=2.31
+sentence-transformers>=3.0     # memory search (pulls in PyTorch; a large download)
+faster-whisper>=1.0            # offline speech-to-text
+sounddevice>=0.4.6             # microphone + speaker
+soundfile>=0.12                # reading generated audio
+pyttsx3>=2.90                  # offline system voice (generic voice / fallback)
+pygame>=2.5                    # projector / hologram display
+pypdf>=4.0                     # text from PDF files
+pillow>=10.0                   # image handling
+pillow-heif>=0.16              # iPhone HEIC photos

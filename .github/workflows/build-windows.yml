@@ -1,0 +1,26 @@
+name: Build Windows app
+
+# Builds PersonaTwin-windows.zip on a free GitHub Windows machine, so you do not need one yourself.
+# Push this project to a GitHub repository, open the Actions tab, run "Build Windows app",
+# then download the "PersonaTwin-windows" artifact.
+on:
+  workflow_dispatch:
+  push:
+    tags: ["v*"]
+
+jobs:
+  build:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Run tests
+        run: python -m unittest
+      - name: Build the exe
+        run: python build_exe.py
+      - uses: actions/upload-artifact@v4
+        with:
+          name: PersonaTwin-windows
+          path: dist/PersonaTwin-windows.zip
