@@ -16,6 +16,17 @@ jobs:
       - uses: actions/setup-python@v5
         with:
           python-version: "3.12"
+          cache: "pip"
+          cache-dependency-path: |
+            requirements.txt
+            requirements-face.txt
+      - name: Install test dependencies
+        # requirements-voice.txt (voice cloning) is skipped here: it's a multi-GB, slow install
+        # and nothing the tests import needs it (voice cloning is only loaded when actually used).
+        run: |
+          python -m pip install --upgrade pip
+          pip install -r requirements.txt
+          pip install -r requirements-face.txt
       - name: Run tests
         run: python -m unittest
       - name: Build the exe
