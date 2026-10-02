@@ -52,6 +52,8 @@ def main() -> None:
     with zipfile.ZipFile(archive, "w", zipfile.ZIP_DEFLATED) as z:
         z.write(exe, exe.name)
         z.write(ROOT / "README-FIRST.txt", "README-FIRST.txt")
+        for f in sorted((ROOT / "examples" / "sample-twin").iterdir()):  # fictional demo to try first
+            z.write(f, f"Sample twin (Nana Maggie)/{f.name}")
     print(f"\nDone: {archive}")
 
 
