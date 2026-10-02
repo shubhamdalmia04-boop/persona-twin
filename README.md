@@ -23,7 +23,7 @@ projector, or a Pepper's-ghost hologram pyramid.
 
 ![Persona Twin demo: the fictional Nana Maggie answering questions, then hologram pyramid mode](docs/demo.gif)
 
-<sub>Illustrative demo with a fictional person and scripted replies. A recording of the real app is coming soon.</sub>
+<sub>🔊 [Watch with sound](docs/demo.mp4). Illustrative demo with a fictional person, scripted replies and stock voices (not the app's voice cloning). A recording of the real app is coming soon.</sub>
 
 ### Try it in two minutes
 
