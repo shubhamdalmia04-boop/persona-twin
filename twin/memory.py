@@ -6,6 +6,7 @@ Fine for tens of thousands of chunks; swap in LanceDB/Chroma later if you outgro
 from __future__ import annotations
 
 import json
+import os
 from pathlib import Path
 from typing import Callable, Sequence
 
@@ -55,10 +56,14 @@ class MemoryStore:
             self.vectors = np.load(self._vectors_path)
 
     def save(self) -> None:
-        self._chunks_path.write_text(
-            json.dumps(self.chunks, ensure_ascii=False, indent=1), encoding="utf-8"
-        )
-        np.save(self._vectors_path, self.vectors)
+        # Write both files to temporary names first, then swap them in, so a crash or power cut
+        # mid-save never leaves a twin with half-written or mismatched memories.
+        tmp_chunks = self._chunks_path.with_suffix(".json.tmp")
+        tmp_vectors = self._vectors_path.with_suffix(".tmp.npy")
+        tmp_chunks.write_text(json.dumps(self.chunks, ensure_ascii=False, indent=1), encoding="utf-8")
+        np.save(tmp_vectors, self.vectors)
+        os.replace(tmp_vectors, self._vectors_path)
+        os.replace(tmp_chunks, self._chunks_path)
 
     # ---- API -------------------------------------------------------------
     def add(self, chunks: list[dict], batch_size: int = 64) -> None:

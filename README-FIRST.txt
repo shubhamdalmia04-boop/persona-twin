@@ -12,6 +12,9 @@ PERSONA TWIN  (Windows 10 / 11, 64-bit)
    Tick the voice-cloning box only if you want replies in the person's voice.
    If asked, install Ollama (click through its installer). After setup, no internet is needed.
 
+   Want to try it first? The folder "Sample twin (Nana Maggie)" next to the exe is a made-up
+   person. In step 4 choose that folder and pick "Maggie Thorne", then ask her about fish pie.
+
 4. Tab "2. Build a twin"  ->  choose the folder where their photos, videos, chats and documents
    are stored (any folder on this computer). Pick which chat name is the person, choose one clear
    face photo, tick the permission box, press "Build the twin".

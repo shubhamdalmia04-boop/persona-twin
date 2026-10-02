@@ -1,14 +1,39 @@
 # Persona Twin
 
+**Talk to someone you love again — in their words, their voice, and their face. Fully offline, on
+your own laptop.**
+
+[![Tests](https://github.com/shubhamdalmia04-boop/persona-twin/actions/workflows/tests.yml/badge.svg)](https://github.com/shubhamdalmia04-boop/persona-twin/actions/workflows/tests.yml)
+[![Download](https://img.shields.io/github/v/release/shubhamdalmia04-boop/persona-twin?label=download&color=brightgreen)](https://github.com/shubhamdalmia04-boop/persona-twin/releases/latest)
+[![License: MIT](https://img.shields.io/badge/license-MIT-blue.svg)](LICENSE)
+
+Persona Twin builds an AI simulation of a person from their WhatsApp chats, voice notes, videos,
+documents and photos. You talk to it by text or microphone, it answers the way they wrote and
+spoke — in their cloned voice, with an animated face made from their photo — on a screen, a
+projector, or a Pepper's-ghost hologram pyramid.
+
+* **Private by design.** After a one-time setup nothing leaves your computer: local LLM
+  (Ollama), local speech recognition (Whisper), local voice cloning (XTTS). No accounts, no cloud.
+* **Runs on an ordinary laptop.** Tested on a light 8 GB RAM laptop; it picks
+  model sizes to fit your hardware.
+* **No Python needed on Windows.** One exe with three tabs: *Set up*, *Build a twin*, *Talk*.
+* **Grounded, not made up.** Replies come from their real messages and your notes; when it
+  doesn't know something it says "I don't remember" instead of inventing it.
+* **Speaks their language.** Hindi, Hinglish and 15 other languages for speech, voice and replies.
+
+<!-- Demo: add a short GIF or video of the twin talking here, e.g. ![Demo](docs/demo.gif) -->
+
+### Try it in two minutes
+
+[Download the latest Windows release](https://github.com/shubhamdalmia04-boop/persona-twin/releases/latest),
+run *Set up*, then build a twin from the bundled **sample twin** — Nana Maggie, a fictional retired
+sea captain (see [`examples/`](examples/README.md)). Ask her how to stop getting seasick.
+
 > **Use responsibly.** This builds an AI simulation of a specific, real person from their private
 > messages, recordings and photos. Only build one with that person's consent, or — if they have
 > died — as someone with a legitimate, family-recognised right to do so. The same technique can be
 > used to impersonate people without their consent; don't do that, and don't use this to deceive
 > anyone about who or what they are talking to.
-
-Build an AI simulation of a person from their messages, recordings, documents and photos, talk to
-it by text or voice, and show it on a screen, a projector or a hologram pyramid. After a one-time
-setup everything runs **offline** on your own computer.
 
 ## What do I run?
 
@@ -187,9 +212,10 @@ laptop gets a 3B language model and the `base` speech model; see `data/profile.j
 
 ## Current limits
 
-* **Untested on real hardware by the author:** the tests cover the logic, but the Windows exe build,
-  the download/setup flow, the window, the MediaPipe face detection and the XTTS voice have not been
-  run end to end. Expect small fixes on the first real run.
+* **Early release.** It works well on a light 8 GB laptop, but has not yet been tried on many
+  different machines. If something breaks on yours, please
+  [open an issue](https://github.com/shubhamdalmia04-boop/persona-twin/issues) with your Windows
+  version, RAM and the error.
 * **The face is a 2D puppet.** It cannot turn its head, change expression or match exact phonemes.
 * **On a laptop without a GPU the cloned voice is slow** (a few seconds per sentence) and the
   language model answers at a few words per second. `Generic voice (fast)` helps.
